@@ -124,13 +124,13 @@ for key in "$@"; do
   fi
 
   if [[ "$val" == op://* ]]; then
-    echo "Error: '$key' is already a 1Password reference ($val)"
+    echo "Error: '$key' is already a 1Password reference"
     exit 1
   fi
 
   KEYS+=("$key")
   VALUES+=("$val")
-  echo "  $key = $val"
+  printf '  %s = %s...\n' "$key" "${val:0:3}"
 done
 echo "----------------------------------------"
 

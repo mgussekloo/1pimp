@@ -42,7 +42,7 @@ The selected account and vault are saved in `${XDG_CONFIG_HOME:-$HOME/.config}/1
 
 ## Important notes
 
-- **The script prints the selected secret values to the terminal** before creating the item. Avoid running it where terminal output is recorded or shared.
+- **The script prints the first three characters of each selected secret** followed by `...` before creating the item. Avoid running it where terminal output is recorded or shared.
 - It edits `.env` in place. Keep a backup until you have verified that the new references resolve, and do not commit plaintext secrets to version control.
 - Keys must already exist in `.env`; keys whose values begin with `op://` are rejected. If a key appears more than once, the last value is stored in 1Password and every matching line is replaced in `.env`.
 - Run it from the directory containing the target `.env` file; the script does not take a path to that file.
